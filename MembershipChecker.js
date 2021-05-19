@@ -134,19 +134,6 @@ function check(){
   })
 }
 
-function checkMembership(chat_id){
-  if(!chat_id){
-    chat_id = params;
-  }
-
-  Api.getChatMember({
-    chat_id: chat_id,
-    user_id: user.telegramid,
-    on_result: LIB_PREFIX + "onCheckMembership " + chat_id,
-    on_error: LIB_PREFIX + "onError " + chat_id
-  })
-}
-
 function checkMemberships(){
   var options = getLibOptions();
   if(!options.chats){ return }
